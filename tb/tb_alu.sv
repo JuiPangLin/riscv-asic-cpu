@@ -14,7 +14,7 @@ module tb_alu;
         .result(result)
     );
 
-        task check_alu(
+    task check_alu(
         input alu_op_t op,
         input logic [31:0] test_a,
         input logic [31:0] test_b,
