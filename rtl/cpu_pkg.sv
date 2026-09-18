@@ -13,4 +13,10 @@ package cpu_pkg;
         ALU_SLTU
     } alu_op_t;
 
+    typedef enum logic [1:0] {
+        IMM_I,
+        IMM_S,
+        IMM_B
+    } imm_type_t;
+    
 endpackage
