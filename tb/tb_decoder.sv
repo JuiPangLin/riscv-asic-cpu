@@ -64,8 +64,9 @@ module tb_decoder;
         // MUL is outside our frozen RV32I subset.
         check_unsupported("MUL", {7'b0000001, 5'd2, 5'd1, 3'b000, 5'd5, 7'b0110011});
         check_unsupported("bad SLL funct7", {7'b0100000, 5'd2, 5'd1, 3'b001, 5'd5, 7'b0110011});
-        check_unsupported("other opcode", {7'b0000000, 5'd2, 5'd1, 3'b000, 5'd5, 7'b0010011});
-
+        check_unsupported("all-zero instr", 32'h0000_0000);
+        check_unsupported("bad opcode",     {25'd0, 7'b1111111});
+        check_unsupported("lb (not yet)",   {12'd8, 5'd1, 3'b000, 5'd5, 7'b0000011});
         $finish;
     end
 endmodule
